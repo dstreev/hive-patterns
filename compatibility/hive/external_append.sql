@@ -1,6 +1,6 @@
 use ${DB}_${PLACEHOLDER};
 
-CREATE TABLE IF NOT EXISTS basic_managed AS
+CREATE EXTERNAL TABLE IF NOT EXISTS basic_append AS
 SELECT
   cc_trans ,
   ccn ,
@@ -15,7 +15,7 @@ FROM
 WHERE
     day='01';
     
-INSERT INTO TABLE basic_managed
+INSERT INTO TABLE basic_append
 SELECT
   cc_trans ,
   ccn ,
@@ -30,7 +30,7 @@ FROM
 WHERE
     day='02';
       
-INSERT INTO TABLE basic_managed
+INSERT INTO TABLE basic_append
 SELECT
   cc_trans ,
   ccn ,
@@ -45,7 +45,7 @@ FROM
 WHERE
     day='03';      
     
-INSERT INTO TABLE basic_managed
+INSERT INTO TABLE basic_append
 SELECT
   cc_trans ,
   ccn ,
